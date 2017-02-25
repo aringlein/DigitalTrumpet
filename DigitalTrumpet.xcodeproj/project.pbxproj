@@ -42,7 +42,7 @@
 			isa = PBXGroup;
 			children = (
 				D77E91791ABEABD30082EEC1 /* LICENSE.txt */,
-				D712DA681ABDE42F00846299 /* ToneGenerator */,
+				D712DA681ABDE42F00846299 /* DigitalTrumpet */,
 				D712DA671ABDE42F00846299 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,7 +55,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D712DA681ABDE42F00846299 /* ToneGenerator */ = {
+		D712DA681ABDE42F00846299 /* DigitalTrumpet */ = {
 			isa = PBXGroup;
 			children = (
 				D712DA6B1ABDE42F00846299 /* AppDelegate.swift */,
@@ -66,6 +66,7 @@
 				D712DA741ABDE42F00846299 /* LaunchScreen.xib */,
 				D712DA691ABDE42F00846299 /* Supporting Files */,
 			);
+			name = DigitalTrumpet;
 			path = ToneGenerator;
 			sourceTree = "<group>";
 		};
