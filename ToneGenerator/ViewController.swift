@@ -12,17 +12,27 @@ import AVFoundation
 class ViewController: UIViewController {
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var amplitudeSlider: UISlider!
+    
+    @IBOutlet weak var otherLabel: UILabel!
     var engine: AVAudioEngine!
     var tone: AVTonePlayerUnit!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
         // Do any additional setup after loading the view, typically from a nib.
         tone = AVTonePlayerUnit()
         label.text = String(format: "%.1f", tone.frequency)
         slider.minimumValue = -5.0
         slider.maximumValue = 5.0
         slider.value = 0.0
+        
+        amplitudeSlider.minimumValue = 0
+       amplitudeSlider.maximumValue = 3
+        amplitudeSlider.value = 0.5
         let format = AVAudioFormat(standardFormatWithSampleRate: tone.sampleRate, channels: 1)
         print(format.sampleRate)
         engine = AVAudioEngine()
@@ -34,6 +44,10 @@ class ViewController: UIViewController {
         } catch let error as NSError {
             print(error)
         }
+        
+        
+        
+        //microphone initialization
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,9 +56,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func sliderChanged(_ sender: UISlider) {
-        let freq = 440.0 * pow(2.0, Double(slider.value))
-        tone.frequency = freq
-        label.text = String(format: "%.1f", freq)
+        
+        if (sender.tag == 0) {
+            let freq = 440.0 * pow(2.0, Double(slider.value))
+            tone.frequency = freq
+            label.text = String(format: "%.1f", freq)
+                    } else {
+            let amp = Double(sender.value);
+            tone.pan = Float(amp);
+            otherLabel.text = String(format: "%f.1f", amp);
+        }
+        
     }
     
     @IBAction func togglePlay(_ sender: UIButton) {

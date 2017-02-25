@@ -11,10 +11,11 @@ import AVFoundation
 
 class AVTonePlayerUnit: AVAudioPlayerNode {
     let bufferCapacity: AVAudioFrameCount = 512
-    let sampleRate: Double = 44_100.0
+//    let sampleRate: Double = 44_100.0
+    let sampleRate: Double = 60_100.0
     
     var frequency: Double = 440.0
-    var amplitude: Double = 0.25
+    var amplitude: Double = 0.5
     
     private var theta: Double = 0.0
     private var audioFormat: AVAudioFormat!
@@ -34,7 +35,7 @@ class AVTonePlayerUnit: AVAudioPlayerNode {
         let data = buffer.floatChannelData?[0]
         let numberFrames = buffer.frameCapacity
         var theta = self.theta
-        let theta_increment = 2.0 * M_PI * self.frequency / self.sampleRate
+        let theta_increment = 2.0 * M_PI * self.frequency / self.sampleRate;
         
         for frame in 0..<Int(numberFrames) {
             data?[frame] = Float32(sin(theta) * amplitude)
