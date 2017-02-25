@@ -25,7 +25,6 @@
 		D712DA751ABDE42F00846299 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D712DA961ABE627100846299 /* AVTonePlayerUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVTonePlayerUnit.swift; sourceTree = "<group>"; };
 		D77E91791ABEABD30082EEC1 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		D77E917A1ABEABD30082EEC1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +42,6 @@
 			isa = PBXGroup;
 			children = (
 				D77E91791ABEABD30082EEC1 /* LICENSE.txt */,
-				D77E917A1ABEABD30082EEC1 /* README.md */,
 				D712DA681ABDE42F00846299 /* ToneGenerator */,
 				D712DA671ABDE42F00846299 /* Products */,
 			);
