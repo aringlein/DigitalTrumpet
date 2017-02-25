@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var amplitudeSlider: UISlider!
     
     @IBOutlet weak var otherLabel: UILabel!
+    
+    //music playing
     var engine: AVAudioEngine!
     var tone: AVTonePlayerUnit!
     
@@ -29,8 +31,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        // Do any additional setup after loading the view, typically from a nib.
+       //tone player setup
         tone = AVTonePlayerUnit()
         label.text = String(format: "%.1f", tone.frequency)
         slider.minimumValue = -5.0
@@ -52,68 +53,53 @@ class ViewController: UIViewController {
             print(error)
         }
         
-        
-        
         //microphone initialization
         do {
-        //make an AudioSession, set it to PlayAndRecord and make it active
-        let audioSession:AVAudioSession = AVAudioSession.sharedInstance()
-        try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
-        try audioSession.setActive(true)
-        
-        //set up the URL for the audio file
-        let documents: NSString = NSSearchPathForDirectoriesInDomains( FileManager.SearchPathDirectory.documentDirectory,  FileManager.SearchPathDomainMask.userDomainMask, true)[0] as NSString
-        let str =  documents.appendingPathComponent("recordTest.caf")
-        let url = NSURL.fileURL(withPath: str as String)
-        
-        // make a dictionary to hold the recording settings so we can instantiate our AVAudioRecorder
-            let recordSettings:[String: Any] = [(AVFormatIDKey as NSObject) as! String:kAudioFormatAppleIMA4 as AnyObject,
-                                                      (AVSampleRateKey as NSObject) as! String:44100.0 as AnyObject,
-                                                      (AVNumberOfChannelsKey as NSObject) as! String:2 as AnyObject,(AVEncoderBitRateKey as NSObject) as! String:12800 as AnyObject,
-                                                      (AVLinearPCMBitDepthKey as NSObject) as! String:16 as AnyObject,
-                                                      (AVEncoderAudioQualityKey as NSObject) as! String:AVAudioQuality.max.rawValue as AnyObject
+            //make an AudioSession
+            let audioSession:AVAudioSession = AVAudioSession.sharedInstance()
+            try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
+            try audioSession.setActive(true)
             
-        ]
-        
-        //declare a variable to store the returned error if we have a problem instantiating our AVAudioRecorder
-        var error: NSError?
-        
-        //Instantiate an AVAudioRecorder
-        try recorder = AVAudioRecorder(url: url, settings: recordSettings)
-        //recorder = AVAudioRecorder(URL:url, settings: recordSettings, error: &error)
-        //If there's an error, print that shit - otherwise, run prepareToRecord and meteringEnabled to turn on metering (must be run in that order)
-        if let e = error {
-            NSLog(e.localizedDescription)
-        } else {
-            recorder.prepareToRecord()
-            recorder.isMeteringEnabled = true
+            //set up the URL
+            let documents: NSString = NSSearchPathForDirectoriesInDomains( FileManager.SearchPathDirectory.documentDirectory,  FileManager.SearchPathDomainMask.userDomainMask, true)[0] as NSString
+            let str =  documents.appendingPathComponent("recordTest.caf")
+            let url = NSURL.fileURL(withPath: str as String)
             
-            //start recording
-            recorder.record()
+            // make a dictionary (disgusting)
+                let recordSettings:[String: Any] = [(AVFormatIDKey as NSObject) as! String:kAudioFormatAppleIMA4 as AnyObject,
+                                                          (AVSampleRateKey as NSObject) as! String:44100.0 as AnyObject,
+                                                          (AVNumberOfChannelsKey as NSObject) as! String:2 as AnyObject,(AVEncoderBitRateKey as NSObject) as! String:12800 as AnyObject,
+                                                          (AVLinearPCMBitDepthKey as NSObject) as! String:16 as AnyObject,
+                                                          (AVEncoderAudioQualityKey as NSObject) as! String:AVAudioQuality.max.rawValue as AnyObject
+                
+            ]
             
-            //instantiate a timer to be called with whatever frequency we want to grab metering values
-            levelTimer = Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(ViewController.levelTimerCallback), userInfo: nil, repeats: true)
+            var error: NSError?
             
-        }
+            //Instantiate an AVAudioRecorder
+            try recorder = AVAudioRecorder(url: url, settings: recordSettings)
+            if let e = error {
+                NSLog(e.localizedDescription)
+            } else {
+                recorder.prepareToRecord()
+                recorder.isMeteringEnabled = true
+                recorder.record()
+                
+                levelTimer = Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(ViewController.levelTimerCallback), userInfo: nil, repeats: true)
+                
+            }
         } catch {
-            
+            //whoops
         }
     }
     
-    //This selector/function is called every time our timer (levelTime) fires
+    //This called every time timer fires
     func levelTimerCallback() {
-        //NSLog("here");
-        //we have to update meters before we can get the metering values
         recorder.updateMeters()
-        
-        //print to the console if we are beyond a threshold value. Here I've used -7
-        //if recorder.averagePower(forChannel: 0) > -7 {
-        //NSLog("%f", recorder.averagePower(forChannel: 0))
         
         //if we're blowing
         let vol = recorder.averagePower(forChannel: 0)
         if (vol > -10) {
-            //NSLog("exceeded")
             //do something because we're blowing
             //make the request
             let urlPath: String = "https://api.particle.io/v1/devices/3e0033000a47353138383138/status?access_token=2a62610028c4a017bcea1bddec41439585c23a9b"
@@ -137,7 +123,12 @@ class ViewController: UIViewController {
                             
                             if let myDictionary = dictonary
                             {
-                                print(" First name is: \(myDictionary["result"]!)")
+                                let state = myDictionary["result"]
+//                                switch state {
+//                                    //case "open"
+//                                }
+                                NSLog(state as! String)
+                                
                             }
                         } catch let error as NSError {
                             print(error)

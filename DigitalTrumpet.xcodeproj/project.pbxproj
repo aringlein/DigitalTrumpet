@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D712DA661ABDE42F00846299 /* ToneGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToneGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D712DA661ABDE42F00846299 /* DigitalTrumpet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalTrumpet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D712DA6A1ABDE42F00846299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D712DA6B1ABDE42F00846299 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D712DA6D1ABDE42F00846299 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		D712DA671ABDE42F00846299 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D712DA661ABDE42F00846299 /* ToneGenerator.app */,
+				D712DA661ABDE42F00846299 /* DigitalTrumpet.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,9 +80,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D712DA651ABDE42F00846299 /* ToneGenerator */ = {
+		D712DA651ABDE42F00846299 /* DigitalTrumpet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D712DA851ABDE43000846299 /* Build configuration list for PBXNativeTarget "ToneGenerator" */;
+			buildConfigurationList = D712DA851ABDE43000846299 /* Build configuration list for PBXNativeTarget "DigitalTrumpet" */;
 			buildPhases = (
 				D712DA621ABDE42F00846299 /* Sources */,
 				D712DA631ABDE42F00846299 /* Frameworks */,
@@ -92,9 +92,9 @@
 			);
 			dependencies = (
 			);
-			name = ToneGenerator;
+			name = DigitalTrumpet;
 			productName = ToneGenerator;
-			productReference = D712DA661ABDE42F00846299 /* ToneGenerator.app */;
+			productReference = D712DA661ABDE42F00846299 /* DigitalTrumpet.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -114,7 +114,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D712DA611ABDE42F00846299 /* Build configuration list for PBXProject "ToneGenerator" */;
+			buildConfigurationList = D712DA611ABDE42F00846299 /* Build configuration list for PBXProject "DigitalTrumpet" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -127,7 +127,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D712DA651ABDE42F00846299 /* ToneGenerator */,
+				D712DA651ABDE42F00846299 /* DigitalTrumpet */,
 			);
 		};
 /* End PBXProject section */
@@ -297,7 +297,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D712DA611ABDE42F00846299 /* Build configuration list for PBXProject "ToneGenerator" */ = {
+		D712DA611ABDE42F00846299 /* Build configuration list for PBXProject "DigitalTrumpet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D712DA831ABDE43000846299 /* Debug */,
@@ -306,7 +306,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D712DA851ABDE43000846299 /* Build configuration list for PBXNativeTarget "ToneGenerator" */ = {
+		D712DA851ABDE43000846299 /* Build configuration list for PBXNativeTarget "DigitalTrumpet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D712DA861ABDE43000846299 /* Debug */,

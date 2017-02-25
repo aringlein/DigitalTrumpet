@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ToneGenerator.xcodeproj">
+      location = "self:/Users/a14libb/ToneGenerator1.0-Swift/DigitalTrumpet.xcodeproj">
    </FileRef>
 </Workspace>

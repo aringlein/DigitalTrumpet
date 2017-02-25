@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D712DA651ABDE42F00846299"
-               BuildableName = "ToneGenerator.app"
-               BlueprintName = "ToneGenerator"
-               ReferencedContainer = "container:ToneGenerator.xcodeproj">
+               BuildableName = "DigitalTrumpet.app"
+               BlueprintName = "DigitalTrumpet"
+               ReferencedContainer = "container:DigitalTrumpet.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D712DA651ABDE42F00846299"
-            BuildableName = "ToneGenerator.app"
-            BlueprintName = "ToneGenerator"
-            ReferencedContainer = "container:ToneGenerator.xcodeproj">
+            BuildableName = "DigitalTrumpet.app"
+            BlueprintName = "DigitalTrumpet"
+            ReferencedContainer = "container:DigitalTrumpet.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D712DA651ABDE42F00846299"
-            BuildableName = "ToneGenerator.app"
-            BlueprintName = "ToneGenerator"
-            ReferencedContainer = "container:ToneGenerator.xcodeproj">
+            BuildableName = "DigitalTrumpet.app"
+            BlueprintName = "DigitalTrumpet"
+            ReferencedContainer = "container:DigitalTrumpet.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D712DA651ABDE42F00846299"
-            BuildableName = "ToneGenerator.app"
-            BlueprintName = "ToneGenerator"
-            ReferencedContainer = "container:ToneGenerator.xcodeproj">
+            BuildableName = "DigitalTrumpet.app"
+            BlueprintName = "DigitalTrumpet"
+            ReferencedContainer = "container:DigitalTrumpet.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
