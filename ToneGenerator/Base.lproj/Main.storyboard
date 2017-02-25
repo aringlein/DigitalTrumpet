@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="ToneGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="DigitalTrumpet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -34,9 +34,8 @@
                                     <action selector="sliderChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="jg7-wZ-Lhq"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="hiM-Xi-uro">
+                            <slider opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="200" minValue="0.0" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="hiM-Xi-uro">
                                 <rect key="frame" x="14" y="211" width="347" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="sliderChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="08g-5o-A8e"/>
                                 </connections>
@@ -67,7 +66,9 @@
                             <constraint firstItem="chO-Pw-tbs" firstAttribute="centerX" secondItem="FCg-HE-yVp" secondAttribute="centerX" id="dOo-W1-DM6"/>
                             <constraint firstItem="h04-W9-xdI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="gVh-Ge-sPl"/>
                             <constraint firstItem="h04-W9-xdI" firstAttribute="top" secondItem="chO-Pw-tbs" secondAttribute="bottom" constant="8" symbolic="YES" id="j8m-CM-oUK"/>
+                            <constraint firstItem="hiM-Xi-uro" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="kNP-zh-PEQ"/>
                             <constraint firstItem="chO-Pw-tbs" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="n4O-2D-aOK"/>
+                            <constraint firstItem="hiM-Xi-uro" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="191" id="zMc-vK-CXn"/>
                         </constraints>
                     </view>
                     <connections>
